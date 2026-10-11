@@ -176,7 +176,7 @@ curl "http://localhost:8000/v1/transcriptions/<job_id>/export?format=srt"
 
 | Method | Path | Description |
 |---|---|---|
-| `POST` | `/v1/transcriptions` | Upload `file`; optional `language`, `word_timestamps`. `202` new job · `200` same file already done · `413` too large · `415` not audio · `503` queue full |
+| `POST` | `/v1/transcriptions` | Upload `file`; optional `language`, `word_timestamps`. `202` new job · `200` same file already done · `413` too large · `415` not audio · `422` invalid language code · `503` queue full |
 | `GET` | `/v1/transcriptions/{id}` | Status, progress, error, transcript. `404` if unknown |
 | `GET` | `/v1/transcriptions/{id}/export?format=` | `txt`, `srt`, `vtt`, `json`. `409` if not completed |
 | `POST` | `/v1/transcriptions/{id}/retry` | Re-queue a failed job (resumes from checkpoints) |
@@ -195,9 +195,18 @@ A full example with word timestamps: [`samples/hello.example.json`](samples/hell
 ### CLI (no API, database or queue)
 
 ```bash
+# macOS / Linux
 docker compose run --rm -v "$(pwd)/samples:/srv/samples" worker \
     python -m app.cli samples/hello.mp3 --format srt
 ```
+
+```powershell
+# Windows PowerShell
+docker compose run --rm -v "${PWD}/samples:/srv/samples" worker python -m app.cli samples/hello.mp3 --format srt
+```
+
+The CLI runs inside the worker container, which already has ffmpeg and all dependencies; nothing needs to be
+installed on the host.
 
 ### Tests
 
