@@ -1,0 +1,18 @@
+# Opt-in GPU override:
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up --build
+# Needs an NVIDIA driver that supports CUDA 12 (Windows: driver >= 551, Docker Desktop with WSL2).
+services:
+  worker:
+    build:
+      target: gpu
+    environment:
+      WHISPER_DEVICE: cuda  # fail loudly if the GPU is not usable, instead of silently using CPU
+      WHISPER_MODEL: ${GPU_WHISPER_MODEL:-small}  # small fits in 4 GB VRAM; use large-v3 on 8 GB+
+      WHISPER_COMPUTE_TYPE: ${GPU_COMPUTE_TYPE:-int8_float16}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1  # one worker per GPU: the model lives in GPU memory
+              capabilities: [gpu]

@@ -1,0 +1,281 @@
+{
+  "language": "en",
+  "duration_sec": 17.277,
+  "text": "Hello, and welcome to the Transcription Pipeline demo. This audio file was generated with text to speech. The pipeline converts any audio format to 16 kilohertz mono, and transcribes it with whisper and returns timestamps for every segment.",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.0,
+      "end": 3.56,
+      "text": "Hello, and welcome to the Transcription Pipeline demo.",
+      "confidence": 0.7304989617808563,
+      "no_speech_prob": 0.01932923123240471,
+      "low_confidence": false,
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.32,
+          "text": "Hello,",
+          "probability": 0.8868350386619568
+        },
+        {
+          "start": 0.66,
+          "end": 0.9,
+          "text": "and",
+          "probability": 0.9703165888786316
+        },
+        {
+          "start": 0.9,
+          "end": 1.22,
+          "text": "welcome",
+          "probability": 0.9623979330062866
+        },
+        {
+          "start": 1.22,
+          "end": 1.58,
+          "text": "to",
+          "probability": 0.9990532994270325
+        },
+        {
+          "start": 1.58,
+          "end": 1.7,
+          "text": "the",
+          "probability": 0.9450494050979614
+        },
+        {
+          "start": 1.7,
+          "end": 2.56,
+          "text": "Transcription",
+          "probability": 0.6402801126241684
+        },
+        {
+          "start": 2.56,
+          "end": 3.1,
+          "text": "Pipeline",
+          "probability": 0.8626753985881805
+        },
+        {
+          "start": 3.1,
+          "end": 3.56,
+          "text": "demo.",
+          "probability": 0.6113284230232239
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "start": 4.04,
+      "end": 7.18,
+      "text": "This audio file was generated with text to speech.",
+      "confidence": 0.7304989617808563,
+      "no_speech_prob": 0.01932923123240471,
+      "low_confidence": false,
+      "words": [
+        {
+          "start": 4.04,
+          "end": 4.26,
+          "text": "This",
+          "probability": 0.9568870663642883
+        },
+        {
+          "start": 4.26,
+          "end": 4.58,
+          "text": "audio",
+          "probability": 0.914526641368866
+        },
+        {
+          "start": 4.58,
+          "end": 4.96,
+          "text": "file",
+          "probability": 0.9944943785667419
+        },
+        {
+          "start": 4.96,
+          "end": 5.24,
+          "text": "was",
+          "probability": 0.9984112977981567
+        },
+        {
+          "start": 5.24,
+          "end": 5.78,
+          "text": "generated",
+          "probability": 0.997286319732666
+        },
+        {
+          "start": 5.78,
+          "end": 6.1,
+          "text": "with",
+          "probability": 0.9677460789680481
+        },
+        {
+          "start": 6.1,
+          "end": 6.46,
+          "text": "text",
+          "probability": 0.9646362662315369
+        },
+        {
+          "start": 6.46,
+          "end": 6.76,
+          "text": "to",
+          "probability": 0.8727188110351562
+        },
+        {
+          "start": 6.76,
+          "end": 7.18,
+          "text": "speech.",
+          "probability": 0.9548999667167664
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 7.64,
+      "end": 11.8,
+      "text": "The pipeline converts any audio format to 16 kilohertz mono,",
+      "confidence": 0.7304989617808563,
+      "no_speech_prob": 0.01932923123240471,
+      "low_confidence": false,
+      "words": [
+        {
+          "start": 7.64,
+          "end": 7.8,
+          "text": "The",
+          "probability": 0.9742200970649719
+        },
+        {
+          "start": 7.8,
+          "end": 8.22,
+          "text": "pipeline",
+          "probability": 0.8408532738685608
+        },
+        {
+          "start": 8.22,
+          "end": 8.8,
+          "text": "converts",
+          "probability": 0.707997739315033
+        },
+        {
+          "start": 8.8,
+          "end": 9.14,
+          "text": "any",
+          "probability": 0.9619444608688354
+        },
+        {
+          "start": 9.14,
+          "end": 9.58,
+          "text": "audio",
+          "probability": 0.990053653717041
+        },
+        {
+          "start": 9.58,
+          "end": 9.98,
+          "text": "format",
+          "probability": 0.9879833459854126
+        },
+        {
+          "start": 9.98,
+          "end": 10.28,
+          "text": "to",
+          "probability": 0.993500292301178
+        },
+        {
+          "start": 10.28,
+          "end": 10.72,
+          "text": "16",
+          "probability": 0.9832469820976257
+        },
+        {
+          "start": 10.72,
+          "end": 11.36,
+          "text": "kilohertz",
+          "probability": 0.5751680433750153
+        },
+        {
+          "start": 11.36,
+          "end": 11.8,
+          "text": "mono,",
+          "probability": 0.5609506964683533
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 12.2,
+      "end": 16.66,
+      "text": "and transcribes it with whisper and returns timestamps for every segment.",
+      "confidence": 0.7304989617808563,
+      "no_speech_prob": 0.01932923123240471,
+      "low_confidence": false,
+      "words": [
+        {
+          "start": 12.2,
+          "end": 12.36,
+          "text": "and",
+          "probability": 0.7717253565788269
+        },
+        {
+          "start": 12.36,
+          "end": 13.18,
+          "text": "transcribes",
+          "probability": 0.874673048655192
+        },
+        {
+          "start": 13.18,
+          "end": 13.36,
+          "text": "it",
+          "probability": 0.998278021812439
+        },
+        {
+          "start": 13.36,
+          "end": 13.56,
+          "text": "with",
+          "probability": 0.9967064261436462
+        },
+        {
+          "start": 13.56,
+          "end": 13.94,
+          "text": "whisper",
+          "probability": 0.888668417930603
+        },
+        {
+          "start": 13.94,
+          "end": 14.3,
+          "text": "and",
+          "probability": 0.5199218988418579
+        },
+        {
+          "start": 14.3,
+          "end": 14.64,
+          "text": "returns",
+          "probability": 0.9825581908226013
+        },
+        {
+          "start": 14.64,
+          "end": 15.52,
+          "text": "timestamps",
+          "probability": 0.7900417149066925
+        },
+        {
+          "start": 15.52,
+          "end": 15.9,
+          "text": "for",
+          "probability": 0.921922504901886
+        },
+        {
+          "start": 15.9,
+          "end": 16.2,
+          "text": "every",
+          "probability": 0.9854567646980286
+        },
+        {
+          "start": 16.2,
+          "end": 16.66,
+          "text": "segment.",
+          "probability": 0.998993456363678
+        }
+      ]
+    }
+  ],
+  "engine": "faster_whisper",
+  "model": "base"
+}

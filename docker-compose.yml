@@ -1,0 +1,70 @@
+# CPU by default: works on any machine with Docker, no GPU needed.
+# GPU:  docker compose -f docker-compose.yml -f docker-compose.gpu.yml up --build
+
+x-app-env: &app-env
+  env_file:
+    - path: .env
+      required: false
+  environment:
+    DATABASE_URL: postgresql+psycopg://transcribe:transcribe@postgres:5432/transcribe
+    REDIS_URL: redis://redis:6379/0
+    DATA_DIR: /data
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: transcribe
+      POSTGRES_PASSWORD: transcribe
+      POSTGRES_DB: transcribe
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U transcribe"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    <<: *app-env
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - audio_data:/data
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  worker:
+    <<: *app-env
+    build:
+      context: .
+      dockerfile: docker/worker.Dockerfile
+      target: cpu
+    volumes:
+      - audio_data:/data
+      - model_cache:/models
+    depends_on:
+      api: { condition: service_healthy }  # api creates the tables first
+    restart: unless-stopped
+
+volumes:
+  pg_data:
+  audio_data:
+  model_cache:

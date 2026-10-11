@@ -1,0 +1,10 @@
+# API image: web framework, database, queue. No ML libraries.
+fastapi==0.115.6
+uvicorn==0.34.0
+python-multipart==0.0.20
+pydantic==2.10.4
+pydantic-settings==2.7.1
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.3
+redis==5.2.1
+rq==2.1.0

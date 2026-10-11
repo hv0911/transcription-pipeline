@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Secrets and local config
+.env
+
+# Runtime data (uploads, work dirs, model weights)
+data/
+models/
+*.bin
+
+# Generated sample audio (small samples are committed, large/generated ones are not)
+samples/long_*
+samples/output/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+# Worker image: everything the API has (DB + queue) plus the speech-to-text engine.
+-r requirements-api.txt
+faster-whisper==1.1.1
+ctranslate2==4.5.0
+# Pinned so faster-whisper 1.1.1 gets the versions it was built against (it imports requests).
+huggingface-hub==0.27.1
+requests==2.32.3
+
+# Tests run inside the worker image (it has ffmpeg and every dependency).
+pytest==8.3.4
+httpx==0.28.1
